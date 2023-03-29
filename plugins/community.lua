@@ -12,7 +12,6 @@ return {
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.git.git-blame" },
   { import = "astrocommunity.color.headlines-nvim" },
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   {
