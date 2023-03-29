@@ -22,5 +22,10 @@ return {
     keys         = {
       { "<leader>T", "<cmd>TodoTelescope<cr>", desc = "Open TODOs in Telescope" },
     },
-  }
+  },
+  {
+    "xiyaowong/transparent.nvim",
+    event = "VeryLazy",
+    cmd = { "TransparentToggle" },
+  },
 }
