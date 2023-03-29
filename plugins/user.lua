@@ -28,14 +28,4 @@ return {
     event = "VeryLazy",
     config = function() vim.cmd [[TransparentEnable]] end,
   },
-  {
-    "f-person/git-blame.nvim",
-    event = "VeryLazy",
-    -- cmd = "GitBlameDisable",
-    -- opts  = { gitblame_enabled = 0, },
-    config = function() vim.cmd [[GitBlameDisable]] end,
-    keys = {
-      { "<leader>gB", "<cmd>GitBlameToggle<cr>", desc = "GitBlameToggle on/off" },
-    },
-  },
 }
