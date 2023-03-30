@@ -41,13 +41,13 @@ return {
 			vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
 		end,
 	},
-	-- {
-	-- 	"sindrets/diffview.nvim",
-	-- 	event = "User AstroFile",
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 	},
-	-- },
+	{
+		"sindrets/diffview.nvim",
+		event = "User AstroFile",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
 	-- {
 	-- 	"norcalli/nvim-colorizer.lua",
 	-- 	event = { "BufRead" },
