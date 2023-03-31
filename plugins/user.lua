@@ -1,3 +1,4 @@
+local prefix = "<leader>s"
 return {
 	-- You can also add new plugins here as well:
 	-- Add plugins, the lazy syntax
@@ -28,7 +29,6 @@ return {
 		event = "VeryLazy",
 		config = function() vim.cmd [[TransparentEnable]] end,
 	},
-	-- { "bluz71/vim-nightfly-guicolors" },
 	{ "rodjek/vim-puppet" },
 	{ "pearofducks/ansible-vim" },
 	{
@@ -48,6 +48,39 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 	},
+
+	{
+		"nvim-pack/nvim-spectre",
+		cmd = "Spectre",
+		keys = {
+			{ prefix,        desc = "Search / Replace",                mode = { "n", "x" } },
+			{ prefix .. "s", function() require("spectre").open() end, desc = "Spectre" },
+			{
+				prefix .. "w",
+				mode = "n",
+				function() require("spectre").open_visual { select_word = true } end,
+				desc = "Spectre (current word)",
+			},
+			{ prefix .. "f", function() require("spectre").open_file_search() end, desc = "Spectre (current file)" },
+		},
+		opts = function()
+			return {
+				mapping = {
+					send_to_qf = { map = "q" },
+					replace_cmd = { map = "c" },
+					show_option_menu = { map = "o" },
+					run_current_replace = { map = "C" },
+					run_replace = { map = "R" },
+					change_view_mode = { map = "v" },
+					resume_last_search = { map = "l" },
+				},
+			}
+		end,
+	},
+	{ "bluz71/vim-nightfly-guicolors" },
+	{ "rodjek/vim-puppet" },
+	{ "pearofducks/ansible-vim" },
+	{ "navarasu/onedark.nvim" },
 	-- {
 	-- 	"norcalli/nvim-colorizer.lua",
 	-- 	event = { "BufRead" },

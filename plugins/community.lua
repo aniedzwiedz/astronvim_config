@@ -12,8 +12,8 @@ return {
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.color.headlines-nvim" },
-  { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   {
     "m4xshen/smartcolumn.nvim",
     opts = {
@@ -21,5 +21,4 @@ return {
       disabled_filetypes = { "help", "text", "markdown" },
     },
   },
-
 }
