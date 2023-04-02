@@ -1,4 +1,4 @@
-local prefix = "<leader>s"
+local prefix = "<leader>r"
 return {
 	-- You can also add new plugins here as well:
 	-- Add plugins, the lazy syntax
@@ -53,7 +53,7 @@ return {
 		"nvim-pack/nvim-spectre",
 		cmd = "Spectre",
 		keys = {
-			{ prefix,        desc = "Search / Replace",                mode = { "n", "x" } },
+			{ prefix,        desc = "Search / [r]eplace",                mode = { "n", "x" } },
 			{ prefix .. "s", function() require("spectre").open() end, desc = "Spectre" },
 			{
 				prefix .. "w",
