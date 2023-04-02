@@ -9,6 +9,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- lvim.builtin.telescope.theme = "ivy"
+-- lvim.builtin.telescope.pickers.git_files.hidden = false
+-- lvim.builtin.telescope.pickers.find_files.hidden = false
+-- vim.opt.mouse = none
+-- vim.opt.wrap = false
+
 return {
   opt = {
     -- set to true or false etc.
@@ -17,6 +23,9 @@ return {
     spell = true,         -- sets vim.opt.spell
     signcolumn = "auto",   -- sets vim.opt.signcolumn to auto
     wrap = true,           -- sets vim.opt.wrap
+    backup = false,
+    swapfile = false,
+    smartindent = true,
   },
   g = {
     mapleader = " ",                  -- sets vim.g.mapleader

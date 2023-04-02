@@ -10,7 +10,7 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
-  -- TODO:  test
+
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -53,7 +53,7 @@ return {
     "nvim-pack/nvim-spectre",
     cmd = "Spectre",
     keys = {
-      { prefix,        desc = "Search / [r]eplace",              mode = { "n", "x" } },
+      { prefix, desc = "Search / [r]eplace", mode = { "n", "x" } },
       { prefix .. "s", function() require("spectre").open() end, desc = "Spectre" },
       {
         prefix .. "w",
@@ -92,12 +92,59 @@ return {
         },
         -- Plugins Config --
         diagnostics = {
-          darker = true,     -- darker colors for diagnostic
-          undercurl = true,  -- use undercurl instead of underline for diagnostics
+          darker = true, -- darker colors for diagnostic
+          undercurl = true, -- use undercurl instead of underline for diagnostics
           background = true, -- use background color for virtual text
         },
       }
     end,
+  },
+  {
+    "nvim-telescope/telescope.nvim", -- tag = '0.1.1',
+    -- dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+    -- require("telescope").setup {
+    opts = {
+      -- defaults = {
+        -- ...
+      -- },
+      pickers = {
+        find_files = {
+          theme = "ivy",
+        },
+        grep_string = {
+          theme = "ivy",
+        },
+        live_grep = {
+          theme = "ivy",
+        },
+      },
+      -- extensions = {
+      -- ...
+      -- },
+    },
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      default_component_configs = {
+        -- container = {
+        --   enable_character_fade = true,
+        -- },
+        indent = {
+          indent_size = 2,
+          padding = 1, -- extra padding on left hand side
+          -- indent guides
+          with_markers = true,
+          indent_marker = "│",
+          last_indent_marker = "└",
+        },
+      },
+    },
   },
   -- {
   -- 	"norcalli/nvim-colorizer.lua",
