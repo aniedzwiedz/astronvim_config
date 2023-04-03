@@ -42,6 +42,10 @@ return {
     ["<leader>w"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     ["<F2>"] = { ":DiffviewClose<cr>", desc = "Close Diff View" }, -- closing Diffview
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    -- Navigate tabs
+    ["<S-l>"] = { "<cmd>bnext<cr>", desc = "Next tab" },
+    ["<S-h>"] = { "<cmd>bprevious<cr>", desc = "Previous tab" },
+    -- maps.n["[t"] = { function() vim.cmd.tabprevious() end, desc = "Previous tab" }
   },
   t = {
     -- setting a mapping to false will disable it
