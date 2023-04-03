@@ -1,3 +1,0 @@
-equire("Comment.config").setup {  
-
-}
