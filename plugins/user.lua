@@ -53,7 +53,7 @@ return {
     "nvim-pack/nvim-spectre",
     cmd = "Spectre",
     keys = {
-      { prefix, desc = "Search / [r]eplace", mode = { "n", "x" } },
+      { prefix,        desc = "Search / [r]eplace",              mode = { "n", "x" } },
       { prefix .. "s", function() require("spectre").open() end, desc = "Spectre" },
       {
         prefix .. "w",
@@ -92,8 +92,8 @@ return {
         },
         -- Plugins Config --
         diagnostics = {
-          darker = true, -- darker colors for diagnostic
-          undercurl = true, -- use undercurl instead of underline for diagnostics
+          darker = true,     -- darker colors for diagnostic
+          undercurl = true,  -- use undercurl instead of underline for diagnostics
           background = true, -- use background color for virtual text
         },
       }
@@ -109,7 +109,7 @@ return {
     -- require("telescope").setup {
     opts = {
       -- defaults = {
-        -- ...
+      -- ...
       -- },
       pickers = {
         find_files = {
