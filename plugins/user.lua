@@ -11,6 +11,46 @@ return {
   --   end,
   -- },
 
+  -- { "rose-pine/neovim", event = "VeryLazy" },
+  {
+    "navarasu/onedark.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("onedark").setup {
+        -- style = "warmer",
+        style = "warm",
+        -- transparent = true,
+        lualine = {
+          transparent = true,
+        },
+        -- Plugins Config --
+        diagnostics = {
+          darker = true, -- darker colors for diagnostic
+          undercurl = true, -- use undercurl instead of underline for diagnostics
+          background = true, -- use background color for virtual text
+        },
+      }
+    end,
+  },
+  -- {
+  --   "NvChad/base46",
+  --   branch = "master",
+  --   config = function()
+  --     local ok, base46 = pcall(require, "base46")
+  --
+  --     if ok then base46.load_theme() end
+  --   end,
+  -- },
+  -- {
+  --   "NvChad/ui",
+  --   branch = "main",
+  --   after = "base46",
+  --   config = function()
+  --     local present, nvchad_ui = pcall(require, "nvchad_ui")
+  --
+  --     if present then nvchad_ui.setup() end
+  --   end,
+  -- },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -53,7 +93,7 @@ return {
     "nvim-pack/nvim-spectre",
     cmd = "Spectre",
     keys = {
-      { prefix,        desc = "Search / [r]eplace",              mode = { "n", "x" } },
+      { prefix, desc = "Search / [r]eplace", mode = { "n", "x" } },
       { prefix .. "s", function() require("spectre").open() end, desc = "Spectre" },
       {
         prefix .. "w",
@@ -80,25 +120,6 @@ return {
   { "bluz71/vim-nightfly-guicolors" },
   { "rodjek/vim-puppet" },
   { "pearofducks/ansible-vim" },
-  {
-    "navarasu/onedark.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("onedark").setup {
-        style = "warmer",
-        -- transparent = true,
-        lualine = {
-          transparent = true,
-        },
-        -- Plugins Config --
-        diagnostics = {
-          darker = true,     -- darker colors for diagnostic
-          undercurl = true,  -- use undercurl instead of underline for diagnostics
-          background = true, -- use background color for virtual text
-        },
-      }
-    end,
-  },
   {
     "nvim-telescope/telescope.nvim", -- tag = '0.1.1',
     -- dependencies = { "nvim-lua/plenary.nvim" },
