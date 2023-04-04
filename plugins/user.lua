@@ -155,12 +155,12 @@ return {
         --   enable_character_fade = true,
         -- },
         indent = {
-          indent_size = 2,
+          indent_size = 3,
           padding = 1, -- extra padding on left hand side
           -- indent guides
           with_markers = true,
-          indent_marker = "│",
-          last_indent_marker = "└",
+          indent_marker = ".",
+          last_indent_marker = "👉",
         },
       },
     },
