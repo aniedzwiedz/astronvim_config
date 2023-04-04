@@ -150,6 +150,7 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
+      open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
       default_component_configs = {
         -- container = {
         --   enable_character_fade = true,
@@ -159,7 +160,7 @@ return {
           padding = 1, -- extra padding on left hand side
           -- indent guides
           with_markers = true,
-          indent_marker = ".",
+          indent_marker = "▪️",
           last_indent_marker = "👉",
         },
       },
