@@ -69,8 +69,6 @@ return {
     event = "VeryLazy",
     config = function() vim.cmd [[TransparentEnable]] end,
   },
-  { "rodjek/vim-puppet" },
-  { "pearofducks/ansible-vim" },
   {
     "phaazon/hop.nvim",
     branch = "v2",
