@@ -11,7 +11,10 @@ return {
   --   end,
   -- },
 
-  -- { "rose-pine/neovim", event = "VeryLazy" },
+  -- { "rose-pine/neovim",
+  -- lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  -- priority = 1000, -- make sure to load this before all the other start plugins
+  -- },
   {
     "navarasu/onedark.nvim",
     event = "VeryLazy",
@@ -116,8 +119,20 @@ return {
     end,
   },
   { "bluz71/vim-nightfly-guicolors" },
-  { "rodjek/vim-puppet" },
-  { "pearofducks/ansible-vim" },
+  {
+    "rodjek/vim-puppet",
+    ft = "puppet",
+    event = "BufRead",
+  },
+  {
+    "pearofducks/ansible-vim",
+    ft = "yaml.ansible",
+    -- event = "BufRead",
+    config = function()
+      -- load the colorscheme here
+      vim.cmd [[au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible]]
+    end,
+  },
   {
     "nvim-telescope/telescope.nvim", -- tag = '0.1.1',
     -- dependencies = { "nvim-lua/plenary.nvim" },

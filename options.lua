@@ -17,7 +17,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 return {
   opt = {
-    -- set to true or false etc.
     relativenumber = true, -- sets vim.opt.relativenumber
     number = true,         -- sets vim.opt.number
     spell = true,         -- sets vim.opt.spell
@@ -25,7 +24,8 @@ return {
     wrap = true,           -- sets vim.opt.wrap
     backup = false,
     swapfile = false,
-    smartindent = true,
+    smartindent = true, -- ... unless there is a capital letter in the query
+    autoindent = true,
   },
   g = {
     mapleader = " ",                  -- sets vim.g.mapleader
