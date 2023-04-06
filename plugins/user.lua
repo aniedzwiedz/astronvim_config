@@ -11,30 +11,11 @@ return {
   --   end,
   -- },
 
-  -- { "rose-pine/neovim",
-  -- lazy = false, -- make sure we load this during startup if it is your main colorscheme
-  -- priority = 1000, -- make sure to load this before all the other start plugins
+  -- {
+  --   "rose-pine/neovim",
+  --   lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  --   priority = 1000, -- make sure to load this before all the other start plugins
   -- },
-  {
-    "navarasu/onedark.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("onedark").setup {
-        -- style = "warmer",
-        style = "warm",
-        -- transparent = true,
-        lualine = {
-          transparent = true,
-        },
-        -- Plugins Config --
-        diagnostics = {
-          darker = true, -- darker colors for diagnostic
-          undercurl = true, -- use undercurl instead of underline for diagnostics
-          background = true, -- use background color for virtual text
-        },
-      }
-    end,
-  },
   -- {
   --   "NvChad/base46",
   --   branch = "master",
