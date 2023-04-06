@@ -15,6 +15,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- vim.opt.mouse = none
 -- vim.opt.wrap = false
 
+vim.opt.list = true
+-- vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append "eol:↴"
+
 return {
   opt = {
     relativenumber = true, -- sets vim.opt.relativenumber

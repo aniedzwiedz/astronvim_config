@@ -48,11 +48,11 @@ return {
       { "<leader>T", "<cmd>TodoTelescope<cr>", desc = "Open TODOs in Telescope" },
     },
   },
-  {
-    "xiyaowong/transparent.nvim",
-    event = "VeryLazy",
-    config = function() vim.cmd [[TransparentEnable]] end,
-  },
+  -- {
+  --   "xiyaowong/transparent.nvim",
+  --   event = "VeryLazy",
+  --   config = function() vim.cmd [[TransparentEnable]] end,
+  -- },
   {
     "phaazon/hop.nvim",
     branch = "v2",
