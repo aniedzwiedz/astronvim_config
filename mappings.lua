@@ -39,12 +39,23 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
-    ["<leader>w"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
+    ["<leader>w"] = { ":w!<cr>", desc = "Save File" },             -- change description but the same command
     ["<F2>"] = { ":DiffviewClose<cr>", desc = "Close Diff View" }, -- closing Diffview
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     -- Navigate tabs
     ["<S-l>"] = { "<cmd>bnext<cr>", desc = "Next tab" },
     ["<S-h>"] = { "<cmd>bprevious<cr>", desc = "Previous tab" },
+    -- vim.treesitter.get_query() is deprecated, use vim.treesitter.query.get_query() instead. :help deprecated This feature will be removed in Nvim version 0.10
+    -- ["<leader>?"] = {
+    --   function()
+    --     -- You can pass additional configuration to telescope to change theme, layout, etc.
+    --     require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown {
+    --       winblend = 10,
+    --       previewer = false,
+    --     })
+    --   end,
+    --   desc = "[?] Fuzzily search in current buffer",
+    -- },
     -- maps.n["[t"] = { function() vim.cmd.tabprevious() end, desc = "Previous tab" }
   },
   t = {

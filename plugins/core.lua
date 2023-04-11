@@ -22,7 +22,7 @@ return {
   {
     "L3MON4D3/LuaSnip",
     config = function(plugin, opts)
-      require "plugins.configs.luasnip" (plugin, opts) -- include the default astronvim config that calls the setup call
+      require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom luasnip configuration such as filetype extend or custom snippets
       local luasnip = require "luasnip"
       luasnip.filetype_extend("javascript", { "javascriptreact" })
@@ -34,12 +34,12 @@ return {
     opts = {
       -- char = "",
       use_treesitter = true,
-      -- char = "▏",
-      context_char = "▏",
+      char = "┊",
+      -- context_char = "▏",
       -- space_char_blankline = " ",
       show_current_context = true,
       show_current_context_start = true,
-      show_trailing_blankline_indent = true,
+      show_trailing_blankline_indent = false,
     },
   },
   -- {

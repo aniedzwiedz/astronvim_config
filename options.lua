@@ -1,12 +1,10 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
 
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function() vim.highlight.on_yank() end,
   group = highlight_group,
-  pattern = '*',
+  pattern = "*",
 })
 
 -- lvim.builtin.telescope.theme = "ivy"
@@ -15,15 +13,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- vim.opt.mouse = none
 -- vim.opt.wrap = false
 
-vim.opt.list = true
--- vim.opt.listchars:append "space:⋅"
-vim.opt.listchars:append "eol:↴"
+vim.opt.list =
+    true,
+    -- vim.lsp.buf.format({ timeout_ms = 2000 }),
+    -- vim.opt.listchars:append "space:⋅"
+    vim.opt.listchars:append "eol:↴"
 
 return {
   opt = {
     relativenumber = true, -- sets vim.opt.relativenumber
     number = true,         -- sets vim.opt.number
-    spell = true,         -- sets vim.opt.spell
+    spell = true,          -- sets vim.opt.spell
     signcolumn = "auto",   -- sets vim.opt.signcolumn to auto
     wrap = true,           -- sets vim.opt.wrap
     backup = false,
