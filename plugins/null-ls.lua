@@ -11,6 +11,7 @@ return {
       -- Set a formatter
       null_ls.builtins.formatting.stylua,
       null_ls.builtins.formatting.beautysh,
+      null_ls.builtins.formatting.puppet_lint,
       -- null_ls.builtins.formatting.npm_groovy_lint,
       -- null_ls.builtins.formatting.yamlfmt,
       -- null_ls.builtins.formatting.yq,
@@ -18,8 +19,9 @@ return {
       -- null_ls.builtins.formatting.rubocop,
       -- Set diagnostics
       null_ls.builtins.diagnostics.zsh,
-      null_ls.builtins.diagnostics.ansiblelint,
+      -- null_ls.builtins.diagnostics.ansiblelint,
       null_ls.builtins.diagnostics.trail_space,
+      -- null_ls.builtins.diagnostics.puppet_lint,
       -- null_ls.builtins.diagnostics.rubocop,
     }
     return config -- return final config table

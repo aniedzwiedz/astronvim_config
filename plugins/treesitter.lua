@@ -15,7 +15,7 @@ return {
       "rust",
       "java",
       "yaml",
-      "help",
+      -- "help",
       "vim",
       "vimdoc",
     },

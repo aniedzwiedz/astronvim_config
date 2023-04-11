@@ -110,8 +110,8 @@ return {
     ft = "yaml.ansible",
     -- event = "BufRead",
     config = function()
-      -- load the colorscheme here
-      vim.cmd [[au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible]]
+      -- vim.cmd [[au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible]]
+      vim.cmd [[au BufRead,BufNewFile *ctl.yml set filetype=yaml.ansible]]
     end,
   },
   {
