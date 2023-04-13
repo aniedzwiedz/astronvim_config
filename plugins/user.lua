@@ -35,6 +35,35 @@ return {
   --     if present then nvchad_ui.setup() end
   --   end,
   -- },
+  -- default = "",
+  -- symlink = "",
+  -- folder = {
+  --   default = "",
+  --   empty = "",
+  --   empty_open = "",
+  --   open = "",
+  --   symlink = "",
+  --   symlink_open = "",
+  --   arrow_open = "",
+  --   arrow_closed = "",
+  -- },
+  -- git = {
+  --   unstaged = "✗",
+  --   staged = "✓",
+  --   unmerged = "",
+  --   renamed = "➜",
+  --   untracked = "★",
+  --   deleted = "",
+  --   ignored = "◌",
+  {
+    "NvChad/ui",
+    branch = "v2.0",
+    lazy = false,
+    config = function()
+      -- require "nvchad_ui"
+    end,
+  },
+
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -123,9 +152,26 @@ return {
     },
     -- require("telescope").setup {
     opts = {
-      -- defaults = {
-      -- ...
-      -- },
+      defaults = {
+        prompt_prefix = " 🍳  ",
+        initial_mode = "insert",
+        selection_strategy = "reset",
+        sorting_strategy = "ascending",
+        layout_strategy = "horizontal",
+        layout_config = {
+          horizontal = {
+            prompt_position = "top",
+            preview_width = 0.55,
+            results_width = 0.8,
+          },
+          vertical = {
+            mirror = false,
+          },
+          width = 0.87,
+          height = 0.80,
+          preview_cutoff = 120,
+        },
+      },
       pickers = {
         find_files = {
           theme = "ivy",
