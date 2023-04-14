@@ -1,19 +1,21 @@
+local header = {
+  type = "text",
+  val = require("user.config.banners").dashboard(),
+  opts = {
+    position = "center",
+    hl = "Comment",
+  },
+}
+
 return {
   -- customize alpha options
   {
     "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        "",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
-      }
-      return opts
-    end,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- opts = function(_, opts)
+    opts = {
+      require("alpha").setup(require("user.config.alfa-theme1").config),
+    },
   },
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },
@@ -40,6 +42,9 @@ return {
       show_current_context = true,
       show_current_context_start = true,
       show_trailing_blankline_indent = false,
+      char_highlight_list = {
+        "IndentBlanklineIndent1",
+      },
     },
   },
   -- {

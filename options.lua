@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.opt.list =
   true,
   -- vim.lsp.buf.format({ timeout_ms = 2000 }),
-  -- vim.opt.listchars:append "space:⋅"
+  vim.opt.listchars:append "space:⋅"
   vim.opt.listchars:append "eol:↴"
 
 -- if astronvim.transparent_window then
