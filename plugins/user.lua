@@ -1,4 +1,5 @@
 local prefix = "<leader>r"
+
 return {
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
@@ -55,6 +56,57 @@ return {
   --   untracked = "★",
   --   deleted = "",
   --   ignored = "◌",
+  {
+    "rebelot/kanagawa.nvim",
+    opts = {
+      compile = false, -- enable compiling the colorscheme
+      undercurl = true, -- enable undercurls
+      commentStyle = { italic = true },
+      functionStyle = {},
+      keywordStyle = { italic = true },
+      statementStyle = { bold = true },
+      typeStyle = {},
+      dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+      terminalColors = true, -- define vim.g.terminal_color_{0,17}
+      colors = {
+        palette = {
+          -- change all usages of these colors
+          sumiInk0 = "#000000",
+          -- Diff and Git
+          winterGreen = "#2B3328",
+          winterYellow = "#49443C",
+          winterRed = "#43242B",
+          winterBlue = "#252535",
+          autumnGreen = "#76946A",
+          autumnRed = "#C34043",
+          autumnYellow = "#DCA561",
+          fujiWhite = "#fffaf0",
+        },
+        theme = {
+          -- change specific usages for a certain theme, or for all of them
+          wave = {
+            ui = {
+              float = {
+                bg = "none",
+              },
+            },
+          },
+          dragon = {
+            syn = {
+              parameter = "yellow",
+            },
+          },
+          all = {
+            ui = {
+              bg_gutter = "none",
+              bg = "none",
+            },
+          },
+        },
+      },
+      theme = "dragon", -- Load "dragon" theme when 'background' option is not set
+    },
+  },
   {
     "NvChad/ui",
     branch = "v2.0",

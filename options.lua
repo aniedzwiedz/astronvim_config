@@ -45,9 +45,9 @@ vim.opt.list =
   -- vim.opt.listchars:append "space:⋅"
   vim.opt.listchars:append "eol:↴"
 
-  -- if astronvim.transparent_window then
-  --   autocmds.enable_transparent_mode()
-  -- end
+-- if astronvim.transparent_window then
+--   autocmds.enable_transparent_mode()
+-- end
 return {
   opt = {
     relativenumber = true, -- sets vim.opt.relativenumber
@@ -80,4 +80,5 @@ return {
 --   local_vim.opt.shortmess = vim.opt.shortmess + { I = true } -- add to option list
 --
 -- return local_vim
+-- end
 -- end
