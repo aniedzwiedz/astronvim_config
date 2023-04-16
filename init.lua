@@ -1,16 +1,60 @@
 return {
+  icons = {
+    ActiveLSP = "",
+    ActiveTS = " ",
+    BufferClose = "",
+    DapBreakpoint = "",
+    DapBreakpointCondition = "",
+    DapBreakpointRejected = "",
+    DapLogPoint = "",
+    DapStopped = "",
+    DefaultFile = "",
+    Diagnostic = "",
+    DiagnosticError = "",
+    DiagnosticHint = "",
+    DiagnosticInfo = "",
+    DiagnosticWarn = "",
+    Ellipsis = "",
+    FileModified = "",
+    FileReadOnly = "",
+    FoldClosed = "",
+    FoldOpened = "",
+    FolderClosed = "",
+    FolderEmpty = "",
+    FolderOpen = "",
+    Git = "",
+    GitAdd = "",
+    GitBranch = "",
+    GitChange = "",
+    GitConflict = "",
+    GitDelete = "",
+    GitIgnored = "",
+    GitRenamed = "",
+    GitStaged = "",
+    GitUnstaged = "",
+    GitUntracked = "",
+    LSPLoaded = "",
+    LSPLoading1 = "",
+    LSPLoading2 = "",
+    LSPLoading3 = "",
+    MacroRecording = "",
+    Paste = "",
+    Search = "",
+    Selected = "",
+    TabClose = "",
+  },
   -- Configure AstroNvim updates
   updater = {
-    remote = "origin",     -- remote to use
-    channel = "stable",    -- "stable" or "nightly"
-    version = "latest",    -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "nightly",    -- branch name (NIGHTLY ONLY)
-    commit = nil,          -- commit hash (NIGHTLY ONLY)
-    pin_plugins = nil,     -- nil, true, false (nil will pin plugins on stable only)
-    skip_prompts = false,  -- skip prompts about breaking changes
+    remote = "origin", -- remote to use
+    channel = "stable", -- "stable" or "nightly"
+    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
+    branch = "nightly", -- branch name (NIGHTLY ONLY)
+    commit = nil, -- commit hash (NIGHTLY ONLY)
+    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
+    skip_prompts = false, -- skip prompts about breaking changes
     show_changelog = true, -- show the changelog after performing an update
-    auto_quit = false,     -- automatically quit the current session after a successful update
-    remotes = {            -- easily add new remotes to track
+    auto_quit = false, -- automatically quit the current session after a successful update
+    remotes = { -- easily add new remotes to track
       --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
       --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
       --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
@@ -41,7 +85,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = false,    -- enable or disable format on save globally
+        enabled = false, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           "lua",
         },
@@ -72,9 +116,7 @@ return {
         local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
         local workspace_dir = vim.fn.stdpath "data" .. "/site/java/workspace-root/" .. project_name
         local status = os.execute("[ -d " .. workspace_dir .. " ] && echo '1' || echo '0'")
-        if status == 0 then
-        os.execute("mkdir -p " .. workspace_dir)
-        end
+        if status == 0 then os.execute("mkdir -p " .. workspace_dir) end
 
         -- get the mason install path
         local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
