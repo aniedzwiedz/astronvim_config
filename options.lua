@@ -6,8 +6,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = highlight_group,
   pattern = "*",
 })
+local component = require("astronvim.utils.status").component.mode {
+  mode_text = { padding = { left = 1, right = 1 } },
+  surround = { separator = "right" },
+}
 
-require("user.autocmd")
+require "user.autocmd"
 
 -- M.luasnip = function(opts)
 --   require("luasnip").config.set_config(opts)
@@ -42,10 +46,11 @@ require("user.autocmd")
 -- vim.opt.wrap = false
 
 vim.opt.list =
-  true,
-  -- vim.lsp.buf.format({ timeout_ms = 2000 }),
-  vim.opt.listchars:append "space:⋅"
-  vim.opt.listchars:append "eol:↴"
+    true,
+    -- vim.lsp.buf.format({ timeout_ms = 2000 }),
+    vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append "eol:↴"
 
 -- if astronvim.transparent_window then
 --   autocmds.enable_transparent_mode()
@@ -53,23 +58,23 @@ vim.opt.list =
 return {
   opt = {
     relativenumber = true, -- sets vim.opt.relativenumber
-    number = true, -- sets vim.opt.number
-    spell = true, -- sets vim.opt.spell
-    signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+    number = true,         -- sets vim.opt.number
+    spell = true,          -- sets vim.opt.spell
+    signcolumn = "auto",   -- sets vim.opt.signcolumn to auto
     linebreak = true,
-    wrap = true, -- sets vim.opt.wrap
+    wrap = true,           -- sets vim.opt.wrap
     backup = false,
     swapfile = false,
     smartindent = true, -- ... unless there is a capital letter in the query
     autoindent = true,
   },
   g = {
-    mapleader = " ", -- sets vim.g.mapleader
-    autoformat_enabled = false, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
-    cmp_enabled = true, -- enable completion at start
-    autopairs_enabled = true, -- enable autopairs at start
-    diagnostics_mode = 2, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
-    icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
+    mapleader = " ",                  -- sets vim.g.mapleader
+    autoformat_enabled = false,       -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
+    cmp_enabled = true,               -- enable completion at start
+    autopairs_enabled = true,         -- enable autopairs at start
+    diagnostics_mode = 2,             -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
+    icons_enabled = true,             -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = false, -- disable notifications when toggling UI elements
   },
 }

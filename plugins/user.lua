@@ -56,7 +56,7 @@ return {
   --   untracked = "★",
   --   deleted = "",
   --   ignored = "◌",
-
+  --
   {
     --https://astronvim.com/Recipes/cmp
     -- override nvim-cmp plugin
@@ -265,6 +265,7 @@ return {
       -- ft = "yaml.ansible",
       -- event = "BufRead",
       -- config = function()
+        -- vim.cmd [[au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible]]
         -- vim.cmd [[au BufRead,BufNewFile *ctl.yml set filetype=yaml.ansible]]
       -- end,
     },
