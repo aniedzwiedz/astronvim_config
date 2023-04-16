@@ -11,6 +11,7 @@ return {
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.color.headlines-nvim" },
 }

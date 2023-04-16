@@ -21,3 +21,4 @@ function M.enable_transparent_mode()
   vim.opt.fillchars = "eob: "
 end
 
+return M

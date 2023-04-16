@@ -7,6 +7,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
 })
 
+require("user.autocmd")
+
 -- M.luasnip = function(opts)
 --   require("luasnip").config.set_config(opts)
 --

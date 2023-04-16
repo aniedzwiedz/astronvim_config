@@ -56,17 +56,37 @@ return {
   --   untracked = "★",
   --   deleted = "",
   --   ignored = "◌",
+
+  {
+    "simrat39/rust-tools.nvim", -- add lsp plugin
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = { "rust_analyzer" },
+      },
+    },
+  },
+
+  {
+    "mfussenegger/nvim-jdtls", -- load jdtls on module
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = { "jdtls" },
+      },
+    },
+  },
   {
     "rebelot/kanagawa.nvim",
     opts = {
-      compile = false, -- enable compiling the colorscheme
+      compile = false,  -- enable compiling the colorscheme
       undercurl = true, -- enable undercurls
       commentStyle = { italic = true },
       functionStyle = {},
       keywordStyle = { italic = true },
       statementStyle = { bold = true },
       typeStyle = {},
-      dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+      dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
       terminalColors = true, -- define vim.g.terminal_color_{0,17}
       colors = {
         palette = {
@@ -156,7 +176,7 @@ return {
     "nvim-pack/nvim-spectre",
     cmd = "Spectre",
     keys = {
-      { prefix, desc = "Search / [r]eplace", mode = { "n", "x" } },
+      { prefix,        desc = "Search / [r]eplace",              mode = { "n", "x" } },
       { prefix .. "s", function() require("spectre").open() end, desc = "Spectre" },
       {
         prefix .. "w",
