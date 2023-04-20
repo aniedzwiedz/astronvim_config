@@ -283,8 +283,8 @@ return {
     },
     {
       "pearofducks/ansible-vim",
-      -- ft = "yaml.ansible",
-      -- event = "BufRead",
+      ft = "yaml.ansible",
+      event = "BufRead",
       -- config = function()
         -- vim.cmd [[au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible]]
         -- vim.cmd [[au BufRead,BufNewFile *ctl.yml set filetype=yaml.ansible]]

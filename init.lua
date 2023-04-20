@@ -210,10 +210,10 @@ return {
       if type(content) == "table" then content = table.concat(content, "\n") end
 
       -- check if file is in roles, tasks, or handlers folder
-      local path_regex = vim.regex "(tasks\\|roles\\|handlers)/"
+      local path_regex = vim.regex "(tasks\\|roles\\|handlers|\\ctl.yml)/"
       if path_regex and path_regex:match_str(path) then return "yaml.ansible" end
       -- check for known ansible playbook text and if found, return yaml.ansible
-      local regex = vim.regex "hosts:\\|tasks:"
+      local regex = vim.regex "become:\\|tasks:\\|gather_facts:"
       if regex and regex:match_str(content) then return "yaml.ansible" end
 
       -- return yaml if nothing else
