@@ -38,8 +38,9 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
+    ["<leader>h"] = { "<cmd>nohlsearch<cr>", desc = "No Highlight" },
     -- quick save
-    ["<leader>w"] = { ":w!<cr>", desc = "Save File" },             -- change description but the same command
+    ["<leader>w"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
     ["<F2>"] = { ":DiffviewClose<cr>", desc = "Close Diff View" }, -- closing Diffview
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     -- Navigate tabs

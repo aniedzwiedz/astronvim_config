@@ -58,26 +58,39 @@ return {
   --   ignored = "◌",
   --
   --
-   {
-      "onsails/lspkind.nvim",
-      opts = function(_, opts)
-        -- use codicons preset
-        opts.preset = "codicons"
-        -- set some missing symbol types
-        opts.symbol_map = {
-          Array = "",
-          Boolean = "",
-          Key = "",
-          Namespace = "",
-          Null = "",
-          Number = "",
-          Object = "",
-          Package = "",
-          String = "",
-        }
-        return opts
-      end,
-    },
+  {
+    "onsails/lspkind.nvim",
+    opts = function(_, opts)
+      -- use codicons preset
+      opts.preset = "codicons"
+      -- set some missing symbol types
+      opts.symbol_map = {
+        Array = "",
+        Boolean = "",
+        Key = "",
+        Namespace = "",
+        Null = "",
+        Number = "",
+        Object = "",
+        Package = "",
+        String = "",
+      }
+      return opts
+    end,
+  },
+
+  { "folke/lazy.nvim", tag = "stable" },
+  {
+    "neovim/nvim-lspconfig",
+    lazy = true,
+    dependencies = { "mason-lspconfig.nvim", "nlsp-settings.nvim" },
+  },
+
+  {
+    "b0o/schemastore.nvim",
+    lazy = true,
+  },
+  { "tamago324/nlsp-settings.nvim", cmd = "LspSettings", lazy = true },
   {
     --https://astronvim.com/Recipes/cmp
     -- override nvim-cmp plugin
@@ -222,7 +235,7 @@ return {
       event = "User AstroFile",
       cmd = { "TodoQuickFix" },
       keys = {
-        { "<leader>T", "<cmd>TodoTelescope<cr>", desc = "Open TODOs in Telescope" },
+        { "<leader>fT", "<cmd>TodoTelescope<cr>", desc = "Open TODOs in Telescope" },
       },
     },
     -- {
@@ -286,8 +299,8 @@ return {
       ft = "yaml.ansible",
       event = "BufRead",
       -- config = function()
-        -- vim.cmd [[au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible]]
-        -- vim.cmd [[au BufRead,BufNewFile *ctl.yml set filetype=yaml.ansible]]
+      -- vim.cmd [[au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible]]
+      -- vim.cmd [[au BufRead,BufNewFile *ctl.yml set filetype=yaml.ansible]]
       -- end,
     },
     {
@@ -336,8 +349,15 @@ return {
       },
     },
     {
+      --The `source_selector.tab_labels` option has been deprecated, please use `source_selector.sources` instead.
       "nvim-neo-tree/neo-tree.nvim",
       opts = {
+        source_selector = {
+          winbar = false,
+          statusline = false,
+        },
+        popup_border_style = "rounded",
+        enable_git_status = true,
         open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
         default_component_configs = {
           -- container = {
@@ -348,11 +368,65 @@ return {
             padding = 1, -- extra padding on left hand side
             -- indent guides
             with_markers = true,
-            indent_marker = "▪️",
+            -- indent_marker = "▪️",
             last_indent_marker = "👉",
           },
         },
       },
+    },
+    {
+      "catppuccin/nvim",
+      as = "catppuccin",
+      config = function()
+        require("catppuccin").setup {
+          flavour = "mocha", -- latte, frappe, macchiato, mocha
+          background = {
+            -- :h background
+            light = "latte",
+            dark = "mocha",
+          },
+          transparent_background = true,
+          dim_inactive = {
+            enabled = false,
+            shade = "dark",
+            percentage = 0.15,
+          },
+          no_italic = false, -- Force no italic
+          no_bold = false, -- Force no bold
+          integrations = {
+            cmp = true,
+            gitsigns = true,
+            nvimtree = true,
+            telescope = true,
+            notify = false,
+            mini = false,
+            -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+          },
+          color_overrides = {
+            all = {
+              -- text = "#ffffff",
+            },
+            latte = {
+              base = "#ff0000",
+              mantle = "#242424",
+              crust = "#474747",
+            },
+            frappe = {},
+            macchiato = {},
+            mocha = {},
+          },
+        }
+      end,
+    },
+    {
+      "akinsho/toggleterm.nvim",
+      opts = function(_, opts)
+        opts.config = {
+          open_mapping = [[<c-\>]],
+          shading_factor = 2,
+        }
+        return opts
+      end,
     },
     -- {
     -- 	"norcalli/nvim-colorizer.lua",
