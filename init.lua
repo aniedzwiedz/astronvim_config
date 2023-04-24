@@ -61,8 +61,8 @@ return {
     },
   },
   -- Set colorscheme to use
-  -- colorscheme = "astrodark",
-  colorscheme = "kanagawa-dragon",
+  colorscheme = "catppuccin",
+  -- colorscheme = "kanagawa-dragon",
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = false,
