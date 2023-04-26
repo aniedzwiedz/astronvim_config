@@ -162,7 +162,7 @@ return {
       {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-          ensure_installed = { "jdtls" },
+          -- ensure_installed = { "jdtls" },
         },
       },
     },
@@ -217,14 +217,14 @@ return {
         theme = "dragon", -- Load "dragon" theme when 'background' option is not set
       },
     },
-    {
-      "NvChad/ui",
-      branch = "v2.0",
-      lazy = false,
-      config = function()
-        -- require "nvchad_ui"
-      end,
-    },
+    -- {
+    --   "NvChad/ui",
+    --   branch = "v2.0",
+    --   lazy = false,
+    --   config = function()
+    --     -- require "nvchad_ui"
+    --   end,
+    -- },
     {
       "folke/todo-comments.nvim",
       dependencies = { "nvim-lua/plenary.nvim" },
