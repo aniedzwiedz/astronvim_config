@@ -10,6 +10,9 @@ return {
         "ansiblels",
         "yamlls",
         "bashls",
+        "yamllint",
+        "eslint-lsp",
+        "typescript-language-server",
       },
     },
   },
@@ -18,8 +21,8 @@ return {
     "jay-babu/mason-null-ls.nvim",
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
-      -- ensure_installed = { "prettier", "stylua" },
-      ensure_installed = { "stylua" },
+      ensure_installed = { "prettier", "stylua" },
+      -- ensure_installed = { "stylua" },
       handlers = {
         -- for prettier
         prettier = function()
