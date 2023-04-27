@@ -1,14 +1,14 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
-
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight",
+  { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function() vim.highlight.on_yank() end,
   group = highlight_group,
-  pattern = "*",
+  pattern = "*"
 })
 local component = require("astronvim.utils.status").component.mode {
   mode_text = { padding = { left = 1, right = 1 } },
-  surround = { separator = "right" },
+  surround = { separator = "right" }
 }
 
 -- require "user.autocmd"
@@ -45,10 +45,8 @@ local component = require("astronvim.utils.status").component.mode {
 -- vim.opt.mouse = none
 -- vim.opt.wrap = false
 
-vim.opt.list =
-    true,
-    -- vim.lsp.buf.format({ timeout_ms = 2000 }),
-vim.opt.listchars:append "space:⋅"
+vim.opt.list = true, -- vim.lsp.buf.format({ timeout_ms = 2000 }),
+    vim.opt.listchars:append "space:⋅"
 vim.opt.listchars:append "eol:↴"
 
 -- if astronvim.transparent_window then
@@ -56,26 +54,70 @@ vim.opt.listchars:append "eol:↴"
 -- end
 return {
   opt = {
-    relativenumber = true, -- sets vim.opt.relativenumber
-    number = true,         -- sets vim.opt.number
-    spell = true,          -- sets vim.opt.spell
-    signcolumn = "auto",   -- sets vim.opt.signcolumn to auto
+    relativenumber = true,     -- sets vim.opt.relativenumber
+    number = true,             -- sets vim.opt.number
+    spell = true,              -- sets vim.opt.spell
+    signcolumn = "auto",       -- sets vim.opt.signcolumn to auto
     linebreak = true,
-    wrap = true,           -- sets vim.opt.wrap
+    wrap = true,               -- sets vim.opt.wrap
     backup = false,
     swapfile = false,
-    smartindent = true, -- ... unless there is a capital letter in the query
-    autoindent = true,
+    smartindent = true,     -- ... unless there is a capital letter in the query
+    autoindent = true
   },
   g = {
-    mapleader = " ",                  -- sets vim.g.mapleader
-    autoformat_enabled = false,       -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
-    cmp_enabled = true,               -- enable completion at start
-    autopairs_enabled = true,         -- enable autopairs at start
-    diagnostics_mode = 3,             -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
-    icons_enabled = true,             -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
-    ui_notifications_enabled = false, -- disable notifications when toggling UI elements
-  },
+    mapleader = " ",                     -- sets vim.g.mapleader
+    autoformat_enabled = false,          -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
+    cmp_enabled = true,                  -- enable completion at start
+    autopairs_enabled = true,            -- enable autopairs at start
+    diagnostics_mode = 3,                -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
+    icons_enabled = true,                -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
+    ui_notifications_enabled = false     -- disable notifications when toggling UI elements
+  }
+  -- icons = {
+  --   ActiveLSP = "",
+  --   ActiveTS = " ",
+  --   BufferClose = "",
+  --   DapBreakpoint = "",
+  --   DapBreakpointCondition = "",
+  --   DapBreakpointRejected = "",
+  --   DapLogPoint = "",
+  --   DapStopped = "",
+  --   DefaultFile = "",
+  --   Diagnostic = "",
+  --   DiagnosticError = "",
+  --   DiagnosticHint = "",
+  --   DiagnosticInfo = "",
+  --   DiagnosticWarn = "",
+  --   Ellipsis = "",
+  --   FileModified = "",
+  --   FileReadOnly = "",
+  --   FoldClosed = "",
+  --   FoldOpened = "",
+  --   FolderClosed = "",
+  --   FolderEmpty = "",
+  --   FolderOpen = "",
+  --   Git = "",
+  --   GitAdd = "",
+  --   GitBranch = "",
+  --   GitChange = "",
+  --   GitConflict = "",
+  --   GitDelete = "",
+  --   GitIgnored = "",
+  --   GitRenamed = "",
+  --   GitStaged = "",
+  --   GitUnstaged = "",
+  --   GitUntracked = "",
+  --   LSPLoaded = "",
+  --   LSPLoading1 = "",
+  --   LSPLoading2 = "",
+  --   LSPLoading3 = "",
+  --   MacroRecording = "",
+  --   Paste = "",
+  --   Search = "",
+  --   Selected = "",
+  --   TabClose = "",
+  -- },
 }
 -- If you need more control, you can use the function()...end notation
 -- return function(local_vim)

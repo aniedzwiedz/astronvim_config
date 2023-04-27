@@ -9,7 +9,7 @@ return {
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     config.sources = {
       -- Set a formatter
-      null_ls.builtins.formatting.stylua,
+      -- null_ls.builtins.formatting.stylua,
       null_ls.builtins.formatting.beautysh,
       null_ls.builtins.formatting.puppet_lint,
       -- null_ls.builtins.formatting.npm_groovy_lint,
